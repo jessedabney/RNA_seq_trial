@@ -1,8 +1,8 @@
-# RNA-seq analysis 
-11.19.17
+# RNA-seq analysis   
+11.19.17  
 Jesse Dabney
 
-###Required programs
+### Required programs
 
 * FastQC
 * samtools
@@ -16,7 +16,7 @@ Jesse Dabney
    * edgeR
 
 
-###download data
+### Download data
 
 I'm using toy data from a study involving commercially available human RNA from cancer cell lines and brain tissue. Each set contains 3 technical replicates and has been pre-filtered for reads mapping to chromosome 22.
 
@@ -48,7 +48,7 @@ for i in *.fastq.gz; do echo $i; bioawk -cfastx 'END{print NR}' $i; done
 ```
 
 
-###pre-trimming and alignment QC
+### Pre-trimming and alignment QC
 
 Here I'm running FastQC on the downloaded fastq files. FastQC gives some useful stats that can be used to assess the quality of the reads, including base and sequence quality scores, GC content and overrepresented sequences (e.g. adapters or contamination).
 
@@ -59,7 +59,7 @@ for i in *.fastq.gz; do fastqc -o ./fastqc ../data/$i; done
 This produces html files, which I visually inspected. It also outputs files that can be parsed as part of a pipeline, so that samples failing this step can be removed.
 
 
-###Adaptor Trimming
+### Adaptor Trimming
 
 I'm using Trim Galore! here, based on prior experience with this program. It will trim off low quality bases and adapter sequences, and also run FastQC again on the trimmed reads.
 
@@ -76,7 +76,7 @@ trim_galore -q 15 --fastqc_args '-t 4' --illumina --retain_unpaired --paired ../
 trim_galore -q 15 --fastqc_args '-t 4' --illumina --retain_unpaired --paired ../data/UHR_Rep3*read1*.gz ../data/UHR_Rep3*read2*.gz
 ```
 
-###Alignment
+### Alignment
 
 I'm using HISAT2 for alignment. Some other options were Tophat and STAR, but it seems that HISAT2 is an improvement to Tophat, and STAR was too memory intensive to run on my laptop.
 
@@ -128,7 +128,7 @@ Index bamfile
 samtools index HBR.bam
 ```
 
-###Inspect alignment
+### Inspect alignment
 
 It's good to have a look at the alignments, for instance looking at the samflags for read fates, or generating summary stats. Some things that can be done here:
 
@@ -137,7 +137,7 @@ It's good to have a look at the alignments, for instance looking at the samflags
 * samtools tview
 * samtools flagstat
 
-###Get expression profile with HTSeq (counting reads mapped to genes)
+### Get expression profile with HTSeq (counting reads mapped to genes)
 
 To prepare for differential gene expression analysis, I am generating counts of reads that map to exons. 
 
@@ -152,7 +152,7 @@ join UHR_Rep1_gene.tsv UHR_Rep2_gene.tsv | join - UHR_Rep3_gene.tsv | join - HBR
 ```
 
 
-###DGE analysis with edgeR
+### DGE analysis with edgeR
 
 I chose edgeR for 2 reasons. One, I'm fairly comfortable with R so I figured it would show some proficiency in something other than bash, and two, it was mentioned in the job description.
 
@@ -222,7 +222,7 @@ mat <- mat[o,]
 write.table(mat, file="DE_genes.txt", quote=FALSE, row.names=FALSE, sep="\t")
 ```
 
-###GO Enrichment analysis
+### GO Enrichment analysis
 
 With the list of genes, I want to know what the functional difference is between the two sample sets. This can be accomplished with GO enrichment analysis.
 
