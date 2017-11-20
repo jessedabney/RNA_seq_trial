@@ -1,0 +1,25 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (release 20170413)
+Annotation Version and Release Date:	GO Ontology database  Released 2017-10-23
+Analyzed List:	upload_1 (Homo sapiens)
+Reference List:	Homo sapiens (all genes in database)
+Bonferroni correction:	true
+Bonferroni count:	1347
+GO cellular component complete	Homo sapiens - REFLIST (21042)	upload_1 (237)	upload_1 (expected)	upload_1 (over/under)	upload_1 (fold Enrichment)	upload_1 (P-value)
+mitochondrion (GO:0005739)	1731	39	19.50	+	2.00	3.60E-02
+cytosol (GO:0005829)	4923	83	55.45	+	1.50	4.75E-02
+cytoplasmic part (GO:0044444)	9425	148	106.16	+	1.39	4.73E-05
+cytoplasm (GO:0005737)	11364	173	127.99	+	1.35	1.99E-06
+intracellular organelle part (GO:0044446)	8893	133	100.16	+	1.33	1.64E-02
+organelle part (GO:0044422)	9106	136	102.56	+	1.33	1.18E-02
+intracellular membrane-bounded organelle (GO:0043231)	10704	154	120.56	+	1.28	1.08E-02
+membrane-bounded organelle (GO:0043227)	12436	176	140.07	+	1.26	1.02E-03
+organelle (GO:0043226)	13423	187	151.19	+	1.24	4.59E-04
+intracellular organelle (GO:0043229)	12438	173	140.09	+	1.23	7.81E-03
+intracellular part (GO:0044424)	14239	197	160.38	+	1.23	7.87E-05
+intracellular (GO:0005622)	14585	201	164.27	+	1.22	3.85E-05
+Unclassified (UNCLASSIFIED)	2449	11	27.58	-	.40	0.00E00

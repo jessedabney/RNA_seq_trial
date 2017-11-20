@@ -1,0 +1,19 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (release 20170413)
+Annotation Version and Release Date:	GO Ontology database  Released 2017-10-23
+Analyzed List:	upload_1 (Homo sapiens)
+Reference List:	Homo sapiens (all genes in database)
+Bonferroni correction:	true
+Bonferroni count:	8650
+GO biological process complete	Homo sapiens - REFLIST (21042)	upload_1 (237)	upload_1 (expected)	upload_1 (over/under)	upload_1 (fold Enrichment)	upload_1 (P-value)
+intracellular protein transport (GO:0006886)	819	27	9.22	+	2.93	6.58E-03
+cellular protein localization (GO:0034613)	1338	36	15.07	+	2.39	1.05E-02
+cellular macromolecule localization (GO:0070727)	1348	36	15.18	+	2.37	1.25E-02
+organic substance transport (GO:0071702)	2038	47	22.95	+	2.05	1.54E-02
+macromolecule localization (GO:0033036)	2239	50	25.22	+	1.98	1.68E-02
+biological_process (GO:0008150)	17481	221	196.89	+	1.12	2.69E-02
+Unclassified (UNCLASSIFIED)	3561	16	40.11	-	.40	0.00E00
